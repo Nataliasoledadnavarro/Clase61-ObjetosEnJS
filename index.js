@@ -370,4 +370,55 @@ const cancion = (song) =>{
 
 //Definí la función cancion que reciba como argumento un objeto song y retorne las propiedades como acabamos de describir.
 
+/*4. Nos pasaron un listado de personas y necesitamos guardarlo en una base de datos. Los datos que tenemos son id, email, nombre y teléfono:
+
+1,ada@gmail.com,Ada Lovelace,1234567890
+2,grace@hotmail.com,Grace Hopper,0987654321
+3,hedy@gmail.com,Hedy Lamarr,6789054321
+4,radia@yahoo.com,Radia Perlman,1234509876
+5,Sheryl@facebook.com,Sheryl Sandberg,5432167890
+Y queremos almacenarlos con el siguiente formato:
+
+let ejemplo = {
+  id: 0,
+  nombre: "Ejemplo",
+  email: "ejemplo@terra.com",
+  telefono: "1029384756"
+}
+Definí un objeto para cada persona. Las variables deben llamarse ada, grace, hedy, radia y sheryl.*/
+
+const ada = {
+  id: 1,
+  email: "ada@gmail.com",
+  nombre: "Ada Lovelace", 
+  telefono: 1234567890
+}
+
+const grace = {
+  id: 2,
+  email: "grace@hotmail.com",
+  nombre: "Grace Hopper", 
+  telefono: 0987654321
+}
+
+const hedy = {
+  id: 3,
+  email: "hedy@gmail.com",
+  nombre: "Hedy Lamarr", 
+  telefono: 6789054321
+}
+
+const radia = {
+  id: 4,
+  email: "radia@yahoo.com",
+  nombre: "Radia Perlman", 
+  telefono: 1234509876
+}
+
+const sheryl = {
+  id: 5,
+  nombre: "Sheryl Sandberg", 
+  email: "Sheryl@facebook.com",
+  telefono: 5432167890
+}
 
