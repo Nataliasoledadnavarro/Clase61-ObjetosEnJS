@@ -163,14 +163,26 @@ const user = {
 }
 Tenemos que crear un nuevo objeto, y guardarlo en la variable newUser, conteniendo las mismas propiedades excepto firstName y lastName.
 El nombre hay que guardarlo con el formato expresado en el punto anterior.
-No podemos escribir nuevamente los valores, sino utilizar los que ya estan guardados en el objeto user.
+No podemos escribir nuevamente los valores, sino utilizar los que ya estan guardados en el objeto user.*/
 
 
-Ejercicio 9
+const newUser = user
+newUser.name = { 
+  first: newUser.firstName,
+  last: newUser.lastName
+}
+
+delete newUser.firstName
+delete newUser.lastName
+
+
+console.log(newUser)
+/*Ejercicio 9
 Tenemos un array de objetos con las ganadoras de algunas temporadas de Rupaul.
 Cada objeto tiene las propiedades nombre, temporada y foto.
 Crea una funcion con el nombre mostrarGanadoras, que reciba el array como parametro.
-Dentro de la funcion, recorrer el array utilizando un ciclo for y mostrá el nombre y la temporada que ganó. Por ejemplo: Bianca Del Rio ganó la temporada 6
+Dentro de la funcion, recorrer el array utilizando un ciclo for y mostrá el nombre y la temporada que ganó. Por ejemplo: Bianca Del Rio ganó la temporada 6*/
+
 const ganadoras = [
   {
     nombre: 'Bebe Zahara Benet',
@@ -201,7 +213,23 @@ const ganadoras = [
     temporada: '6',
     foto: 'http://www.nokeynoshade.party/images/bianca-del-rio.jpg'
   }
-];
+]
+
+const nombrarGanadoras = (ganadoras) =>{
+
+  let informacionGanadora = ""
+
+  for (let i = 0; i < ganadoras.length; i++) {
+
+    informacionGanadora = informacionGanadora + `${ganadoras[i].nombre} ganó la temporada ${ganadoras[i].temporada} `
+   
+  }
+
+  return informacionGanadora
+
+}
+
+console.log(nombrarGanadoras(ganadoras))
 
 ///// RETORNO DE LA FUNCION
 // Bebe Zahara Benet ganó la temporada 1
@@ -210,13 +238,16 @@ const ganadoras = [
 // Sharon Needles ganó la temporada 4
 // Jinkx Monsoon ganó la temporada 5
 // Bianca Del Rio ganó la temporada 6
-Ejercicio 10
+
+
+
+/*Ejercicio 10
 Tenemos un array de objetos, con las canciones de un disco de Nirvana
 Cada objeto representa una canción, y tiene las propidades id, nombre, duracion (en segundos)
 Queremos calcular:
 La duración total del disco (suma de la duración de cada canción)
 La duración promedio por canción (un promedio entre todas las duraciones)
-Para ello crear las funciones calcularDuracionTotal y calcularPromedioPorCancion
+Para ello crear las funciones calcularDuracionTotal y calcularPromedioPorCancion*/
 const nevermind = [
   { id: 1, nombre: "Smells Like Teen Spirit", duracion: 302 },
   { id: 2, nombre: "In Bloom", duracion: 255 },
@@ -225,15 +256,35 @@ const nevermind = [
   { id: 5, nombre: "Lithium", duracion: 257 }
 ];
 
+const calcularDuracionTotal = (nevermind) =>{
+
+  let suma = 0
+
+  for (let i = 0; i < nevermind.length; i++) {
+    suma = suma + nevermind[i].duracion 
+    
+  }
+
+  return suma
+}
+
+const calcularPromedioPorCancion = (nevermind) => {
+ 
+  return calcularDuracionTotal(nevermind) / nevermind.length
+}
+
 ///// RESULTADO
-console.log(calcularDuracionTotal); // 1217
-console.log(calcularPromedioPorCancion); // 243.4
-Ejercicio 11
+console.log(calcularDuracionTotal(nevermind)); // 1217
+console.log(calcularPromedioPorCancion(nevermind)); // 243.4
+
+
+/*Ejercicio 11
 Tenemos un array de objetos, que representa un listado de bandas
 Cada objeto representa una banda, y tiene las propidades id, nombre, fundacion, activa
 Crear una funcion que muestre en consola cada banda del array, con la siguiente lógica:
 Si la banda está activa mostrar el mensaje: "[NOMBRE DE LA BANDA] está activa desde el año [AÑO DE FUNDACIÓN]"
-Si la banda NO está activa mostrar el mensaje: "[NOMBRE DE LA BANDA] no está activa"
+Si la banda NO está activa mostrar el mensaje: "[NOMBRE DE LA BANDA] no está activa"*/
+
 const bandas = [
   { id: 1, nombre: "Nirvana", fundacion: 1987, activa: false },
   { id: 2, nombre: "Foo Fighters", fundacion: 1994, activa: true },
@@ -242,29 +293,27 @@ const bandas = [
   { id: 3, nombre: "Pearl Jam", fundacion: 1990, activa: true },
 ];
 
+const estadoDeLaBanda = (bandas) =>{
+ 
+  let resultado = ""
+
+  for (let i = 0; i < bandas.length; i++) {
+    if(bandas[i].activa === true){
+      resultado = resultado + `${bandas[i].nombre} está activa desde el año ${bandas[i].fundacion} `
+    }
+    else {
+      resultado = resultado + `${bandas[i].nombre} no está activa `
+    }  
+  }
+return resultado
+}
+
+console.log(estadoDeLaBanda(bandas))
+
 ///// RESULTADO
 // Nirvana no está activa
 // Foo Fighters está activa desde el año 1994
 // Led Zeppelin no está activa
 // Queens of the Stone Age está activa desde el año 1997
 // Pearl Jam está activa desde el año 1990
-About
-No description, website, or topics provided.
-Resources
- Readme
-Releases
-No releases published
-Packages
-No packages published
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About*/
+
