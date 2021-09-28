@@ -317,3 +317,57 @@ console.log(estadoDeLaBanda(bandas))
 // Queens of the Stone Age está activa desde el año 1997
 // Pearl Jam está activa desde el año 1990
 
+//////////////////// EJERCICIOS MUMUKI. OBJETOS EN JS /////////////
+
+//1. Para comenzar este recorrido vamos a empezar creando nuestro primer objeto. 
+
+//Para ello vamos a declarar una variable que la vamos a llamar sobreMi, la misma debe definir un objeto con tres propiedades: nombre, apellido y edad.
+
+const sobreMi = {
+  nombre: "Natalia",
+  apellido: "Navarro",
+  edad: 36
+}
+
+//2. En el ejercicio anterior creamos la variable sobreMi. Ahora queremos una función que, a partir de un perfil recibido como argumento, nos presente a la persona. Por ejemplo:
+
+ let perfil = {
+  nombre: "Olivia",
+  apellido: "Marsu",
+  edad: 21
+}
+
+const presentacion = (perfil) =>{
+  return `Hola, mi nombre es ${perfil.nombre} ${perfil.apellido} y tengo ${perfil.edad} años`
+}
+
+console.log(presentacion(perfil))
+"Hola, mi nombre es Olivia Marsu y tengo 21 años"
+
+//3. Contamos con algunos objetos que representan canciones de Spotify. Peeero tienen sus propiedades en inglés.
+
+//Queremos una función cancion que retorne un nuevo objeto, a partir de las propiedades del objeto que recibimos como argumento. El mismo debe tener las propiedades titulo, banda, y duracion (en segundos, ya que en el parámetro está en milisegundos). Por ejemplo:
+
+ let song = {
+  title: "Rock and Roll",
+  bandName: "Led Zeppelin",
+  duration: 166000,
+  album: "Led Zeppelin IV"
+};
+
+const cancion = (song) =>{
+
+  const objeto = {
+    titulo: song.title,
+    banda: song.bandName,
+    duracion: song.duration / 1000
+  }
+  return objeto
+
+}
+ console.log(cancion(song))
+//{ titulo: 'Rock and Roll', banda: 'Led Zeppelin', duracion: 166 }
+
+//Definí la función cancion que reciba como argumento un objeto song y retorne las propiedades como acabamos de describir.
+
+
