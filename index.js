@@ -165,18 +165,16 @@ Tenemos que crear un nuevo objeto, y guardarlo en la variable newUser, contenien
 El nombre hay que guardarlo con el formato expresado en el punto anterior.
 No podemos escribir nuevamente los valores, sino utilizar los que ya estan guardados en el objeto user.*/
 
-
-const newUser = user
-newUser.name = { 
+const newUser = user;
+newUser.name = {
   first: newUser.firstName,
-  last: newUser.lastName
-}
+  last: newUser.lastName,
+};
 
-delete newUser.firstName
-delete newUser.lastName
+delete newUser.firstName;
+delete newUser.lastName;
 
-
-console.log(newUser)
+console.log(newUser);
 /*Ejercicio 9
 Tenemos un array de objetos con las ganadoras de algunas temporadas de Rupaul.
 Cada objeto tiene las propiedades nombre, temporada y foto.
@@ -185,51 +183,50 @@ Dentro de la funcion, recorrer el array utilizando un ciclo for y mostrá el nom
 
 const ganadoras = [
   {
-    nombre: 'Bebe Zahara Benet',
-    temporada: '1',
-    foto: 'http://www.nokeynoshade.party/images/bebe-zahara-benet.jpg'
+    nombre: "Bebe Zahara Benet",
+    temporada: "1",
+    foto: "http://www.nokeynoshade.party/images/bebe-zahara-benet.jpg",
   },
   {
-    nombre: 'Tyra Sanchez',
-    temporada: '2',
-    foto: 'http://www.nokeynoshade.party/images/tyra-sanchez.jpg'
-  },
-  { nombre: 'Raja',
-    temporada: '3',
-    foto: 'http://www.nokeynoshade.party/images/raja.jpg'
+    nombre: "Tyra Sanchez",
+    temporada: "2",
+    foto: "http://www.nokeynoshade.party/images/tyra-sanchez.jpg",
   },
   {
-    nombre: 'Sharon Needles',
-    temporada: '4',
-    foto: 'http://www.nokeynoshade.party/images/sharon-needles.jpg'
+    nombre: "Raja",
+    temporada: "3",
+    foto: "http://www.nokeynoshade.party/images/raja.jpg",
   },
   {
-    nombre: 'Jinkx Monsoon',
-    temporada: '5',
-    foto: 'http://www.nokeynoshade.party/images/jinkx-monsoon.jpg'
+    nombre: "Sharon Needles",
+    temporada: "4",
+    foto: "http://www.nokeynoshade.party/images/sharon-needles.jpg",
   },
   {
-    nombre: 'Bianca Del Rio',
-    temporada: '6',
-    foto: 'http://www.nokeynoshade.party/images/bianca-del-rio.jpg'
-  }
-]
+    nombre: "Jinkx Monsoon",
+    temporada: "5",
+    foto: "http://www.nokeynoshade.party/images/jinkx-monsoon.jpg",
+  },
+  {
+    nombre: "Bianca Del Rio",
+    temporada: "6",
+    foto: "http://www.nokeynoshade.party/images/bianca-del-rio.jpg",
+  },
+];
 
-const nombrarGanadoras = (ganadoras) =>{
-
-  let informacionGanadora = ""
+const nombrarGanadoras = (ganadoras) => {
+  let informacionGanadora = "";
 
   for (let i = 0; i < ganadoras.length; i++) {
-
-    informacionGanadora = informacionGanadora + `${ganadoras[i].nombre} ganó la temporada ${ganadoras[i].temporada} `
-   
+    informacionGanadora =
+      informacionGanadora +
+      `${ganadoras[i].nombre} ganó la temporada ${ganadoras[i].temporada} `;
   }
 
-  return informacionGanadora
+  return informacionGanadora;
+};
 
-}
-
-console.log(nombrarGanadoras(ganadoras))
+console.log(nombrarGanadoras(ganadoras));
 
 ///// RETORNO DE LA FUNCION
 // Bebe Zahara Benet ganó la temporada 1
@@ -238,8 +235,6 @@ console.log(nombrarGanadoras(ganadoras))
 // Sharon Needles ganó la temporada 4
 // Jinkx Monsoon ganó la temporada 5
 // Bianca Del Rio ganó la temporada 6
-
-
 
 /*Ejercicio 10
 Tenemos un array de objetos, con las canciones de un disco de Nirvana
@@ -253,30 +248,26 @@ const nevermind = [
   { id: 2, nombre: "In Bloom", duracion: 255 },
   { id: 3, nombre: "Come As You Are", duracion: 219 },
   { id: 4, nombre: "Breed", duracion: 184 },
-  { id: 5, nombre: "Lithium", duracion: 257 }
+  { id: 5, nombre: "Lithium", duracion: 257 },
 ];
 
-const calcularDuracionTotal = (nevermind) =>{
-
-  let suma = 0
+const calcularDuracionTotal = (nevermind) => {
+  let suma = 0;
 
   for (let i = 0; i < nevermind.length; i++) {
-    suma = suma + nevermind[i].duracion 
-    
+    suma = suma + nevermind[i].duracion;
   }
 
-  return suma
-}
+  return suma;
+};
 
 const calcularPromedioPorCancion = (nevermind) => {
- 
-  return calcularDuracionTotal(nevermind) / nevermind.length
-}
+  return calcularDuracionTotal(nevermind) / nevermind.length;
+};
 
 ///// RESULTADO
 console.log(calcularDuracionTotal(nevermind)); // 1217
 console.log(calcularPromedioPorCancion(nevermind)); // 243.4
-
 
 /*Ejercicio 11
 Tenemos un array de objetos, que representa un listado de bandas
@@ -293,22 +284,22 @@ const bandas = [
   { id: 3, nombre: "Pearl Jam", fundacion: 1990, activa: true },
 ];
 
-const estadoDeLaBanda = (bandas) =>{
- 
-  let resultado = ""
+const estadoDeLaBanda = (bandas) => {
+  let resultado = "";
 
   for (let i = 0; i < bandas.length; i++) {
-    if(bandas[i].activa === true){
-      resultado = resultado + `${bandas[i].nombre} está activa desde el año ${bandas[i].fundacion} `
+    if (bandas[i].activa === true) {
+      resultado =
+        resultado +
+        `${bandas[i].nombre} está activa desde el año ${bandas[i].fundacion} `;
+    } else {
+      resultado = resultado + `${bandas[i].nombre} no está activa `;
     }
-    else {
-      resultado = resultado + `${bandas[i].nombre} no está activa `
-    }  
   }
-return resultado
-}
+  return resultado;
+};
 
-console.log(estadoDeLaBanda(bandas))
+console.log(estadoDeLaBanda(bandas));
 
 ///// RESULTADO
 // Nirvana no está activa
@@ -319,53 +310,51 @@ console.log(estadoDeLaBanda(bandas))
 
 //////////////////// EJERCICIOS MUMUKI. OBJETOS EN JS /////////////
 
-//1. Para comenzar este recorrido vamos a empezar creando nuestro primer objeto. 
+//1. Para comenzar este recorrido vamos a empezar creando nuestro primer objeto.
 
 //Para ello vamos a declarar una variable que la vamos a llamar sobreMi, la misma debe definir un objeto con tres propiedades: nombre, apellido y edad.
 
 const sobreMi = {
   nombre: "Natalia",
   apellido: "Navarro",
-  edad: 36
-}
+  edad: 36,
+};
 
 //2. En el ejercicio anterior creamos la variable sobreMi. Ahora queremos una función que, a partir de un perfil recibido como argumento, nos presente a la persona. Por ejemplo:
 
- let perfil = {
+let perfil = {
   nombre: "Olivia",
   apellido: "Marsu",
-  edad: 21
-}
+  edad: 21,
+};
 
-const presentacion = (perfil) =>{
-  return `Hola, mi nombre es ${perfil.nombre} ${perfil.apellido} y tengo ${perfil.edad} años`
-}
+const presentacion = (perfil) => {
+  return `Hola, mi nombre es ${perfil.nombre} ${perfil.apellido} y tengo ${perfil.edad} años`;
+};
 
-console.log(presentacion(perfil))
-"Hola, mi nombre es Olivia Marsu y tengo 21 años"
+console.log(presentacion(perfil));
+("Hola, mi nombre es Olivia Marsu y tengo 21 años");
 
 //3. Contamos con algunos objetos que representan canciones de Spotify. Peeero tienen sus propiedades en inglés.
 
 //Queremos una función cancion que retorne un nuevo objeto, a partir de las propiedades del objeto que recibimos como argumento. El mismo debe tener las propiedades titulo, banda, y duracion (en segundos, ya que en el parámetro está en milisegundos). Por ejemplo:
 
- let song = {
+let song = {
   title: "Rock and Roll",
   bandName: "Led Zeppelin",
   duration: 166000,
-  album: "Led Zeppelin IV"
+  album: "Led Zeppelin IV",
 };
 
-const cancion = (song) =>{
-
+const cancion = (song) => {
   const objeto = {
     titulo: song.title,
     banda: song.bandName,
-    duracion: song.duration / 1000
-  }
-  return objeto
-
-}
- console.log(cancion(song))
+    duracion: song.duration / 1000,
+  };
+  return objeto;
+};
+console.log(cancion(song));
 //{ titulo: 'Rock and Roll', banda: 'Led Zeppelin', duracion: 166 }
 
 //Definí la función cancion que reciba como argumento un objeto song y retorne las propiedades como acabamos de describir.
@@ -390,35 +379,210 @@ Definí un objeto para cada persona. Las variables deben llamarse ada, grace, he
 const ada = {
   id: 1,
   email: "ada@gmail.com",
-  nombre: "Ada Lovelace", 
-  telefono: 1234567890
-}
+  nombre: "Ada Lovelace",
+  telefono: 1234567890,
+};
 
 const grace = {
   id: 2,
   email: "grace@hotmail.com",
-  nombre: "Grace Hopper", 
-  telefono: 0987654321
-}
+  nombre: "Grace Hopper",
+  telefono: 0987654321,
+};
 
 const hedy = {
   id: 3,
   email: "hedy@gmail.com",
-  nombre: "Hedy Lamarr", 
-  telefono: 6789054321
-}
+  nombre: "Hedy Lamarr",
+  telefono: 6789054321,
+};
 
 const radia = {
   id: 4,
   email: "radia@yahoo.com",
-  nombre: "Radia Perlman", 
-  telefono: 1234509876
-}
+  nombre: "Radia Perlman",
+  telefono: 1234509876,
+};
 
 const sheryl = {
   id: 5,
-  nombre: "Sheryl Sandberg", 
+  nombre: "Sheryl Sandberg",
   email: "Sheryl@facebook.com",
-  telefono: 5432167890
+  telefono: 5432167890,
+};
+
+// 7 Definí el procedimiento agregarLenguajeFavorito que tome un objeto por parámetro y agregue la propiedad si corresponde.
+
+let datos = {
+  id: 1,
+  nombre: "Ada",
+  apellido: "Lovelace",
+  email: "ada.lovelace@gmail.com",
+  telefono: "1234567890",
+  edad: 29,
+  programa: true,
+};
+
+/*const agregarLenguajeFavorito = (objeto) =>{
+if(objeto.programa){
+ objeto.lenguajeFavorito = "JavaScript"
+}
+return datos
 }
 
+console.log(agregarLenguajeFavorito(datos))*/
+
+//11
+let playlistDeEjemplo = {
+  nombre: "Lista de Nirvana",
+  privada: true,
+  canciones: ["Smells Like Teen Spirit", "In Bloom", "Come As You Are"],
+};
+
+const infoDeLaPlaylist = (playlist) => {
+  let infoEstadoPlaylist = "";
+
+  if (playlist.privada) {
+    infoEstadoPlaylist = "Si";
+  } else {
+    infoEstadoPlaylist = "No";
+  }
+
+  return `Lista de Nirvana
+Privada: ${infoEstadoPlaylist}
+canciones:${playlist.canciones[0]}
+${playlist.canciones[1]}
+${playlist.canciones[2]}`;
+};
+
+console.log(infoDeLaPlaylist(playlistDeEjemplo));
+
+//12
+let ganadorass = [
+  {
+    nombre: "Bebe Zahara Benet",
+    temporada: "1",
+    foto: "http://www.nokeynoshade.party/images/bebe-zahara-benet.jpg",
+  },
+  {
+    nombre: "Tyra Sanchez",
+    temporada: "2",
+    foto: "http://www.nokeynoshade.party/images/tyra-sanchez.jpg",
+  },
+  {
+    nombre: "Raja",
+    temporada: "3",
+    foto: "http://www.nokeynoshade.party/images/raja.jpg",
+  },
+  {
+    nombre: "Sharon Needles",
+    temporada: "4",
+    foto: "http://www.nokeynoshade.party/images/sharon-needles.jpg",
+  },
+  {
+    nombre: "Jinkx Monsoon",
+    temporada: "5",
+    foto: "http://www.nokeynoshade.party/images/jinkx-monsoon.jpg",
+  },
+  {
+    nombre: "Bianca Del Rio",
+    temporada: "6",
+    foto: "http://www.nokeynoshade.party/images/bianca-del-rio.jpg",
+  },
+];
+
+const informacionGanadoras = (ganadoras) =>{
+
+  let infoGanadoras = ""
+for (let i = 0; i < ganadoras.length; i++) {
+ infoGanadoras = infoGanadoras + `${ganadoras[i].nombre} ganó la temporada ${ganadoras[i].temporada}\n`
+}
+  return infoGanadoras
+}
+
+console.log(informacionGanadoras(ganadorass))
+
+//13
+
+let bandass = [
+  { id: 1, nombre: "Nirvana", fundacion: 1987, activa: false },
+  { id: 2, nombre: "Foo Fighters", fundacion: 1994, activa: true },
+  { id: 3, nombre: "Led Zeppelin", fundacion: 1967, activa: false },
+  { id: 3, nombre: "Queens of the Stone Age", fundacion: 1997, activa: true },
+  { id: 3, nombre: "Pearl Jam", fundacion: 1990, activa: true },
+];
+
+const estanActivas = (bandas) =>{
+
+  let estadoDeLasBandas = ""
+
+  for (let i = 0; i < bandas.length; i++) {
+    if(bandas[i].activa === true){
+      estadoDeLasBandas = estadoDeLasBandas + `${bandas[i].nombre} está activa desde el año ${bandas[i].fundacion}\n`
+    }
+    else {
+      estadoDeLasBandas = estadoDeLasBandas + `${bandas[i].nombre} no está activa\n`
+    }
+  }
+  return estadoDeLasBandas
+}
+
+console.log(estanActivas(bandass))
+
+//14
+let ledZeppelin = {
+  nombre: "Led Zeppelin",
+  anio: 1968,
+  activa: false,
+  miniatura:
+    "http://townsquare.media/site/295/files/2014/10/Led-Zeppelin1.jpg?w=980&q=75",
+  integrantes: ["Jimmy Page", "Robert Plant", "John Paul Jones", "John Bonham"],
+  discos: [
+    {
+      nombre: "Led Zeppelin",
+      anio: 1969,
+      canciones: ["Good Times, Bad Times", "Communication Breakdown"],
+      duracion: 2691,
+    },
+    {
+      nombre: "Led Zeppelin II",
+      anio: 1969,
+      canciones: ["Whole Lotta Love", "Moby Dick", "Ramble On"],
+      duracion: 2502,
+    },
+    {
+      nombre: "Led Zeppelin III",
+      anio: 1970,
+      canciones: ["Immigrant Song"],
+      duracion: 2489,
+    },
+    {
+      nombre: "Led Zeppelin IV",
+      anio: 1971,
+      canciones: ["Rock and Roll", "Stairway to Heaven", "Four Sticks"],
+      duracion: 2559,
+    },
+  ],
+};
+//"Led Zeppelin se fundó en el año 1968. Tiene 4 integrantes: Jimmy Page, Robert Plant, John Paul Jones, John Bonham. Tiene en total 4 discos. Tiene en total 9 canciones entre todos los discos. En promedio, cada canción dura 1137.888888888889 segundos."
+const informacionDeLaBanda = (ledZeppelin) =>{
+  let totalCanciones = 0
+  let totalSegundos = 0
+  let integrantes = ""
+  
+    for (let i = 0; i < ledZeppelin.integrantes.length; i++) {
+     integrantes = integrantes + ", " + ledZeppelin.integrantes[i]
+      
+    }
+  
+    for (let i = 0; i < ledZeppelin.discos.length; i++) {
+      totalCanciones = totalCanciones + ledZeppelin.discos[i].canciones.length
+      totalSegundos = totalSegundos + ledZeppelin.discos[i].duracion
+    }
+    let promedioCanciones = totalSegundos / totalCanciones
+  
+    return `${ledZeppelin.nombre} se fundó en el año ${ledZeppelin.anio}. Tiene ${ledZeppelin.integrantes.length} integrantes: ${integrantes.slice(2)}. Tiene en total ${ledZeppelin.discos.length} discos. Tiene en total ${totalCanciones} canciones entre todos los discos. En promedio, cada canción dura ${promedioCanciones} segundos.`
+  
+  }
+
+console.log(informacionDeLaBanda(ledZeppelin))
